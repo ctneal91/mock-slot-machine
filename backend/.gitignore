@@ -1,0 +1,43 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all environment files.
+/.env*
+!/.env*.erb
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore storage (contains SQLite3 databases).
+/storage/*
+!/storage/.keep
+!/storage/.gitkeep
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+/config/credentials/*.key
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+!/storage/.gitkeep
+
+/public/assets
+
+# Ignore CI service files.
+/.byebug_history
+
+# Ignore IDE/Editor specific files
+.idea/
+*.swp
+*.swo
+*~
