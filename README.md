@@ -11,30 +11,28 @@ A full-stack slot machine game built with React and Rails.
 - House edge: server re-rolls winning spins based on credit thresholds
 - Cash out button with dodge mechanics
 
-## Running the Application
+## Running Locally
 
-**Backend (Rails API):**
+**Rails API + React Frontend:**
 ```bash
-cd backend
 bundle install
 rails db:create db:migrate
 rails server
 ```
-The backend runs on http://localhost:3000
+The app runs on http://localhost:3000
 
-**Frontend (React):**
+**For frontend development:**
 ```bash
 cd frontend
 npm install
 npm start
 ```
-The frontend runs on http://localhost:3001
+Frontend dev server runs on http://localhost:3001
 
 ## Testing
 
 **Backend:**
 ```bash
-cd backend
 bundle exec rspec
 ```
 
@@ -55,7 +53,13 @@ npm run lint:fix      # Auto-fix linting issues
 
 **Backend (Ruby):**
 ```bash
-cd backend
 bundle exec rubocop        # Check for linting issues
 bundle exec rubocop -a     # Auto-fix linting issues
+```
+
+## Building Frontend
+
+To rebuild the React frontend into the Rails public folder:
+```bash
+rake frontend:build
 ```
