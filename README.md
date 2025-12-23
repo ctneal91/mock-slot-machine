@@ -44,6 +44,55 @@ There is a CASH OUT button on the screen, but there's a twist there as well.
 -   Maintainability: is the code written in a clean, maintainable way?
 -   Testing: was the system adequately tested?
 
+### Running the Application
+
+**Backend (Rails API):**
+```bash
+cd backend
+bundle install
+rails db:create db:migrate
+rails server
+```
+The backend runs on http://localhost:3000
+
+**Frontend (React):**
+```bash
+cd frontend
+npm install
+npm start
+```
+The frontend runs on http://localhost:3001
+
+### Testing
+
+**Backend:**
+```bash
+cd backend
+bundle exec rspec
+```
+
+**Frontend:**
+```bash
+cd frontend
+npm test
+```
+
+### Linting
+
+**Frontend (TypeScript/React):**
+```bash
+cd frontend
+npm run lint          # Check for linting issues
+npm run lint:fix      # Auto-fix linting issues
+```
+
+**Backend (Ruby):**
+```bash
+cd backend
+bundle exec rubocop        # Check for linting issues
+bundle exec rubocop -a     # Auto-fix linting issues
+```
+
 ### CodeSubmit
 
 Please organize, design, test, and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
