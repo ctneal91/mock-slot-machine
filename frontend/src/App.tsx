@@ -138,10 +138,10 @@ function App() {
         <div className="legend">
           <h3>Symbol Rewards:</h3>
           <ul>
-            <li><strong>C</strong> (Cherry) = 10 credits</li>
-            <li><strong>L</strong> (Lemon) = 20 credits</li>
-            <li><strong>O</strong> (Orange) = 30 credits</li>
-            <li><strong>W</strong> (Watermelon) = 40 credits</li>
+            <li><span className="legend-icon">🍒</span> Cherry = 10 credits</li>
+            <li><span className="legend-icon">🍋</span> Lemon = 20 credits</li>
+            <li><span className="legend-icon">🍊</span> Orange = 30 credits</li>
+            <li><span className="legend-icon">🍉</span> Watermelon = 40 credits</li>
           </ul>
           <p className="note">Match 3 of the same symbol to win!</p>
         </div>

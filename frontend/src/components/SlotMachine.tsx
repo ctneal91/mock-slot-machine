@@ -7,8 +7,17 @@ interface SlotMachineProps {
   onSpinComplete: () => void;
 }
 
-const SPIN_SYMBOL = 'X';
+const SPIN_SYMBOL = '❓';
 const SYMBOLS = ['C', 'L', 'O', 'W'];
+
+const SYMBOL_ICONS: Record<string, string> = {
+  'C': '🍒',
+  'L': '🍋',
+  'O': '🍊',
+  'W': '🍉',
+  '?': '❓',
+  'X': '❓',
+};
 
 const SlotMachine: React.FC<SlotMachineProps> = ({ result, isSpinning, onSpinComplete }) => {
   const [displayedSymbols, setDisplayedSymbols] = useState<string[]>(['?', '?', '?']);
@@ -63,22 +72,38 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ result, isSpinning, onSpinCom
 
   const getSymbolName = (symbol: string): string => {
     switch (symbol) {
-      case 'C': return 'Cherry';
-      case 'L': return 'Lemon';
-      case 'O': return 'Orange';
-      case 'W': return 'Watermelon';
+      case 'C':
+      case '🍒': return 'Cherry';
+      case 'L':
+      case '🍋': return 'Lemon';
+      case 'O':
+      case '🍊': return 'Orange';
+      case 'W':
+      case '🍉': return 'Watermelon';
       default: return '';
     }
   };
 
-  const getDisplaySymbol = (index: number): string => {
+  const getRawSymbol = (index: number): string => {
     if (isSpinning) {
       return spinningSymbols[index];
-    }
-    if (result.length === 0) {
+    } else if (result.length === 0) {
+      return displayedSymbols[index];
+    } else {
       return displayedSymbols[index];
     }
-    return displayedSymbols[index];
+  };
+
+  const getDisplaySymbol = (index: number): string => {
+    let symbol: string;
+    if (isSpinning) {
+      symbol = spinningSymbols[index];
+    } else if (result.length === 0) {
+      symbol = displayedSymbols[index];
+    } else {
+      symbol = displayedSymbols[index];
+    }
+    return SYMBOL_ICONS[symbol] || symbol;
   };
 
   const isSymbolSpinning = (index: number): boolean => {
@@ -94,7 +119,7 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ result, isSpinning, onSpinCom
           <div
             key={index}
             className={`slot ${isSymbolSpinning(index) ? 'spinning' : ''}`}
-            title={getSymbolName(getDisplaySymbol(index))}
+            title={getSymbolName(getRawSymbol(index))}
           >
             <span className="symbol">{getDisplaySymbol(index)}</span>
           </div>

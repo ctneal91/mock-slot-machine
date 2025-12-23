@@ -15,7 +15,7 @@ describe('SlotMachine', () => {
       <SlotMachine result={[]} isSpinning={false} onSpinComplete={() => {}} />
     );
 
-    const slots = screen.getAllByText('?');
+    const slots = screen.getAllByText('❓');
     expect(slots).toHaveLength(3);
   });
 
@@ -39,31 +39,31 @@ describe('SlotMachine', () => {
       />
     );
 
-    // Initially all should be spinning (X)
-    expect(screen.getAllByText('X')).toHaveLength(3);
+    // Initially all should be spinning (❓)
+    expect(screen.getAllByText('❓')).toHaveLength(3);
 
-    // After 1 second, first symbol should be revealed
+    // After 1 second, first symbol should be revealed (cherry emoji)
     act(() => {
       jest.advanceTimersByTime(1000);
     });
-    expect(screen.getByText('C')).toBeInTheDocument();
-    expect(screen.getAllByText('X')).toHaveLength(2);
+    expect(screen.getByText('🍒')).toBeInTheDocument();
+    expect(screen.getAllByText('❓')).toHaveLength(2);
 
-    // After 2 seconds, second symbol should be revealed
+    // After 2 seconds, second symbol should be revealed (lemon emoji)
     act(() => {
       jest.advanceTimersByTime(1000);
     });
-    expect(screen.getByText('C')).toBeInTheDocument();
-    expect(screen.getByText('L')).toBeInTheDocument();
-    expect(screen.getAllByText('X')).toHaveLength(1);
+    expect(screen.getByText('🍒')).toBeInTheDocument();
+    expect(screen.getByText('🍋')).toBeInTheDocument();
+    expect(screen.getAllByText('❓')).toHaveLength(1);
 
-    // After 3 seconds, all symbols should be revealed
+    // After 3 seconds, all symbols should be revealed (orange emoji)
     act(() => {
       jest.advanceTimersByTime(1000);
     });
-    expect(screen.getByText('C')).toBeInTheDocument();
-    expect(screen.getByText('L')).toBeInTheDocument();
-    expect(screen.getByText('O')).toBeInTheDocument();
+    expect(screen.getByText('🍒')).toBeInTheDocument();
+    expect(screen.getByText('🍋')).toBeInTheDocument();
+    expect(screen.getByText('🍊')).toBeInTheDocument();
     expect(mockOnSpinComplete).toHaveBeenCalledTimes(1);
   });
 
