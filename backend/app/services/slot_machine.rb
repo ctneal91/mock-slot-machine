@@ -1,10 +1,10 @@
 class SlotMachine
   SYMBOLS = %w[C L O W].freeze # Cherry, Lemon, Orange, Watermelon
   REWARDS = {
-    'C' => 10,  # Cherry
-    'L' => 20,  # Lemon
-    'O' => 30,  # Orange
-    'W' => 40   # Watermelon
+    "C" => 10,  # Cherry
+    "L" => 20,  # Lemon
+    "O" => 30,  # Orange
+    "W" => 40   # Watermelon
   }.freeze
 
   REROLL_CHANCE_MEDIUM = 0.30  # 30% chance to re-roll when credits 40-60
@@ -59,11 +59,11 @@ class SlotMachine
 
     reroll_chance = if credits > HIGH_CREDIT_THRESHOLD
                       REROLL_CHANCE_HIGH
-                    elsif credits >= MEDIUM_CREDIT_THRESHOLD
+    elsif credits >= MEDIUM_CREDIT_THRESHOLD
                       REROLL_CHANCE_MEDIUM
-                    else
+    else
                       0
-                    end
+    end
 
     @random.rand < reroll_chance
   end

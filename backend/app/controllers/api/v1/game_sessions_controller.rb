@@ -1,5 +1,5 @@
 class Api::V1::GameSessionsController < ApplicationController
-  before_action :set_game_session, only: [:show, :roll, :cash_out]
+  before_action :set_game_session, only: [ :show, :roll, :cash_out ]
 
   # POST /api/v1/game_sessions
   def create

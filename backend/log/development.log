@@ -22,3 +22,188 @@ Started GET "/icon.png" for ::1 at 2025-12-22 17:55:47 -0600
   
 ActionController::RoutingError (No route matches [GET] "/icon.png"):
   
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Started POST "/api/v1/game_sessions" for ::1 at 2025-12-22 19:14:32 -0600
+Started POST "/api/v1/game_sessions" for ::1 at 2025-12-22 19:14:32 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/game_sessions"):
+  
+Processing by Api::V1::GameSessionsController#create as HTML
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "game_sessions" WHERE "game_sessions"."session_token" = '8cef31676ee6a8b551a0ff869baf8f65' LIMIT 1 /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Create (1.3ms)[0m  [1m[32mINSERT INTO "game_sessions" ("session_token", "credits", "cashed_out", "created_at", "updated_at") VALUES ('8cef31676ee6a8b551a0ff869baf8f65', 10, FALSE, '2025-12-23 01:14:32.642464', '2025-12-23 01:14:32.642464') RETURNING "id" /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+Completed 201 Created in 16ms (Views: 0.1ms | ActiveRecord: 3.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/game_sessions" for ::1 at 2025-12-22 19:14:41 -0600
+Started POST "/api/v1/game_sessions" for ::1 at 2025-12-22 19:14:41 -0600
+Processing by Api::V1::GameSessionsController#create as HTML
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+Processing by Api::V1::GameSessionsController#create as HTML
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "game_sessions" WHERE "game_sessions"."session_token" = 'f20e001f22a143787b4386c5a975f404' LIMIT 1 /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Create (0.5ms)[0m  [1m[32mINSERT INTO "game_sessions" ("session_token", "credits", "cashed_out", "created_at", "updated_at") VALUES ('f20e001f22a143787b4386c5a975f404', 10, FALSE, '2025-12-23 01:14:41.690684', '2025-12-23 01:14:41.690684') RETURNING "id" /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+Completed 201 Created in 10ms (Views: 0.1ms | ActiveRecord: 3.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Exists? (7.1ms)[0m  [1m[34mSELECT 1 AS one FROM "game_sessions" WHERE "game_sessions"."session_token" = 'cfa59781624a2f335c749b1b71c5e6ec' LIMIT 1 /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Create (0.2ms)[0m  [1m[32mINSERT INTO "game_sessions" ("session_token", "credits", "cashed_out", "created_at", "updated_at") VALUES ('cfa59781624a2f335c749b1b71c5e6ec', 10, FALSE, '2025-12-23 01:14:41.697164', '2025-12-23 01:14:41.697164') RETURNING "id" /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+Completed 201 Created in 12ms (Views: 0.1ms | ActiveRecord: 11.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/game_sessions/cfa59781624a2f335c749b1b71c5e6ec/roll" for ::1 at 2025-12-22 19:14:43 -0600
+Processing by Api::V1::GameSessionsController#roll as HTML
+  Parameters: {"session_token"=>"[FILTERED]"}
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."session_token" = 'cfa59781624a2f335c749b1b71c5e6ec' LIMIT 1 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:62:in `set_game_session'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mGameSession Update (0.1ms)[0m  [1m[33mUPDATE "game_sessions" SET "credits" = 9, "updated_at" = '2025-12-23 01:14:43.593282' WHERE "game_sessions"."id" = 3 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+Completed 200 OK in 53ms (Views: 0.1ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 28.6ms)
+
+
+Started POST "/api/v1/game_sessions/cfa59781624a2f335c749b1b71c5e6ec/roll" for ::1 at 2025-12-22 19:14:51 -0600
+Processing by Api::V1::GameSessionsController#roll as HTML
+  Parameters: {"session_token"=>"[FILTERED]"}
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."session_token" = 'cfa59781624a2f335c749b1b71c5e6ec' LIMIT 1 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:62:in `set_game_session'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mGameSession Update (3.0ms)[0m  [1m[33mUPDATE "game_sessions" SET "credits" = 8, "updated_at" = '2025-12-23 01:14:51.129612' WHERE "game_sessions"."id" = 3 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/game_sessions/cfa59781624a2f335c749b1b71c5e6ec/roll" for ::1 at 2025-12-22 19:15:05 -0600
+Processing by Api::V1::GameSessionsController#roll as HTML
+  Parameters: {"session_token"=>"[FILTERED]"}
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."session_token" = 'cfa59781624a2f335c749b1b71c5e6ec' LIMIT 1 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:62:in `set_game_session'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mGameSession Update (1.2ms)[0m  [1m[33mUPDATE "game_sessions" SET "credits" = 7, "updated_at" = '2025-12-23 01:15:05.130446' WHERE "game_sessions"."id" = 3 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.0ms (2 queries, 0 cached) | GC: 3.7ms)
+
+
+Started POST "/api/v1/game_sessions" for ::1 at 2025-12-22 21:08:16 -0600
+Started POST "/api/v1/game_sessions" for ::1 at 2025-12-22 21:08:16 -0600
+Processing by Api::V1::GameSessionsController#create as HTML
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+Processing by Api::V1::GameSessionsController#create as HTML
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Exists? (7.9ms)[0m  [1m[34mSELECT 1 AS one FROM "game_sessions" WHERE "game_sessions"."session_token" = '3d84e60426f8b56f417323c032578cc9' LIMIT 1 /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Create (0.2ms)[0m  [1m[32mINSERT INTO "game_sessions" ("session_token", "credits", "cashed_out", "created_at", "updated_at") VALUES ('3d84e60426f8b56f417323c032578cc9', 10, FALSE, '2025-12-23 03:08:16.976634', '2025-12-23 03:08:16.976634') RETURNING "id" /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+Completed 201 Created in 20ms (Views: 0.8ms | ActiveRecord: 8.3ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Exists? (8.3ms)[0m  [1m[34mSELECT 1 AS one FROM "game_sessions" WHERE "game_sessions"."session_token" = 'f4fd3be5eebc1bc1b8b0d8a574952b40' LIMIT 1 /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mGameSession Create (0.4ms)[0m  [1m[32mINSERT INTO "game_sessions" ("session_token", "credits", "cashed_out", "created_at", "updated_at") VALUES ('f4fd3be5eebc1bc1b8b0d8a574952b40', 10, FALSE, '2025-12-23 03:08:16.984655', '2025-12-23 03:08:16.984655') RETURNING "id" /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:7:in `create'
+Completed 201 Created in 12ms (Views: 0.1ms | ActiveRecord: 14.2ms (2 queries, 0 cached) | GC: 2.1ms)
+
+
+Started POST "/api/v1/game_sessions/f4fd3be5eebc1bc1b8b0d8a574952b40/roll" for ::1 at 2025-12-22 21:08:19 -0600
+Processing by Api::V1::GameSessionsController#roll as HTML
+  Parameters: {"session_token"=>"[FILTERED]"}
+  [1m[36mGameSession Load (0.3ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."session_token" = 'f4fd3be5eebc1bc1b8b0d8a574952b40' LIMIT 1 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:62:in `set_game_session'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:77:in `update_credits'
+  [1m[36mGameSession Update (1.3ms)[0m  [1m[33mUPDATE "game_sessions" SET "credits" = 49, "updated_at" = '2025-12-23 03:08:19.317078' WHERE "game_sessions"."id" = 5 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:77:in `update_credits'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:77:in `update_credits'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/game_sessions/f4fd3be5eebc1bc1b8b0d8a574952b40/roll" for ::1 at 2025-12-22 21:08:26 -0600
+Processing by Api::V1::GameSessionsController#roll as HTML
+  Parameters: {"session_token"=>"[FILTERED]"}
+  [1m[36mGameSession Load (0.2ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."session_token" = 'f4fd3be5eebc1bc1b8b0d8a574952b40' LIMIT 1 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:62:in `set_game_session'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mGameSession Update (1.4ms)[0m  [1m[33mUPDATE "game_sessions" SET "credits" = 48, "updated_at" = '2025-12-23 03:08:26.083706' WHERE "game_sessions"."id" = 5 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/game_sessions/f4fd3be5eebc1bc1b8b0d8a574952b40/roll" for ::1 at 2025-12-22 21:09:03 -0600
+Processing by Api::V1::GameSessionsController#roll as HTML
+  Parameters: {"session_token"=>"[FILTERED]"}
+  [1m[36mGameSession Load (0.9ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."session_token" = 'f4fd3be5eebc1bc1b8b0d8a574952b40' LIMIT 1 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:62:in `set_game_session'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mGameSession Update (1.8ms)[0m  [1m[33mUPDATE "game_sessions" SET "credits" = 47, "updated_at" = '2025-12-23 03:09:03.167414' WHERE "game_sessions"."id" = 5 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/game_sessions/f4fd3be5eebc1bc1b8b0d8a574952b40/roll" for ::1 at 2025-12-22 21:09:20 -0600
+Processing by Api::V1::GameSessionsController#roll as HTML
+  Parameters: {"session_token"=>"[FILTERED]"}
+  [1m[36mGameSession Load (0.4ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."session_token" = 'f4fd3be5eebc1bc1b8b0d8a574952b40' LIMIT 1 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:62:in `set_game_session'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mGameSession Update (1.6ms)[0m  [1m[33mUPDATE "game_sessions" SET "credits" = 46, "updated_at" = '2025-12-23 03:09:20.099985' WHERE "game_sessions"."id" = 5 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/game_sessions/f4fd3be5eebc1bc1b8b0d8a574952b40/roll" for ::1 at 2025-12-22 21:10:03 -0600
+Processing by Api::V1::GameSessionsController#roll as HTML
+  Parameters: {"session_token"=>"[FILTERED]"}
+  [1m[36mGameSession Load (0.7ms)[0m  [1m[34mSELECT "game_sessions".* FROM "game_sessions" WHERE "game_sessions"."session_token" = 'f4fd3be5eebc1bc1b8b0d8a574952b40' LIMIT 1 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/controllers/api/v1/game_sessions_controller.rb:62:in `set_game_session'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mGameSession Update (2.0ms)[0m  [1m[33mUPDATE "game_sessions" SET "credits" = 45, "updated_at" = '2025-12-23 03:10:03.614592' WHERE "game_sessions"."id" = 5 /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='roll',application='Backend',controller='game_sessions'*/[0m
+  ↳ app/services/slot_machine.rb:79:in `update_credits'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 3.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+

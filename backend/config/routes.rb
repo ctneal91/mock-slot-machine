@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :game_sessions, only: [:create], param: :session_token do
+      resources :game_sessions, only: [ :create ], param: :session_token do
         member do
-          get '', action: :show
-          post 'roll'
-          post 'cash_out'
+          get "", action: :show
+          post "roll"
+          post "cash_out"
         end
       end
     end
