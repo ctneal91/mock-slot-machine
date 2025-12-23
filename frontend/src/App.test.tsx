@@ -23,6 +23,11 @@ describe('App', () => {
 
     expect(screen.getByText(/Slot Machine/i)).toBeInTheDocument();
     expect(screen.getByText(/The House Always Wins/i)).toBeInTheDocument();
+
+    // Wait for async session creation to complete
+    await waitFor(() => {
+      expect(screen.getByText('10')).toBeInTheDocument();
+    });
   });
 
   it('displays initial credits after session is created', async () => {
@@ -77,6 +82,11 @@ describe('App', () => {
     expect(screen.getByText(/Lemon/i)).toBeInTheDocument();
     expect(screen.getByText(/Orange/i)).toBeInTheDocument();
     expect(screen.getByText(/Watermelon/i)).toBeInTheDocument();
+
+    // Wait for async session creation to complete
+    await waitFor(() => {
+      expect(screen.getByText('10')).toBeInTheDocument();
+    });
   });
 
   it('shows new game button after cashing out', async () => {
